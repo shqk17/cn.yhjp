@@ -1,0 +1,103 @@
+#parse("shared/publicTop.vm")
+<script src="${rc.contextPath}/static/outSource/ggwfPublic.js"></script>
+<script src="${rc.contextPath}/static/outSource/wf_public2.js"></script>
+<script src="${rc.contextPath}/static/outSource/outSourceStep03.js"></script>
+<style>
+.bootstrap-table thead tr th:first-child{display:none;}
+.bootstrap-table tbody tr td:first-child{display:none;}
+</style>
+<div  style="align-content: center;margin-top: 2%;">
+    <input type="text" id="outSourceName" class="form-control" style="width: 200px;margin-left: 45%;"placeholder='请填写外包单名称'/>
+</div>
+<div class="panel-body" style="padding-bottom:0px;">
+    <div id="toolbar" class="btn-group">
+        <button id="btn_add" type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加内容
+        </button>
+        <!-- 导入 -->
+        <select name="format" onchange="setfmt()" style="display:none;">
+            <option value="html"></option>
+        </select>
+
+        <div id="drop"></div>
+        <a href="javascript:;" class="a-upload">点击这里上传文件
+            <input type="file" name="xlfile" id="xlf" class="glyphicon glyphicon-log-in"/>
+        </a>
+        <input type="checkbox" name="useworker" style="display:none;" />
+        <input type="checkbox" name="xferable" checked style="display:none;" />
+        <input type="checkbox" name="userabs" checked style="display:none;" />
+        <!--<pre id="out"></pre>-->
+        <strong style="margin-left: 10px;">价格总计:</strong><span id="pricesum"></span>
+    </div>   
+</div>
+<div style="font-size: 16px;text-align:center;color: red;">温馨提示：点击内容可以编辑哦！！</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel">添加修改外包内容</h4>
+            </div>
+            <div class="modal-body popMain">
+                <form id="add_from">
+                    <div class="form-group publicStyle">
+                        <label for="txt_name">游戏名称</label>
+                        <input type="text" name="txt_name" class="form-control" id="txt_name" placeholder="游戏名称" style="color:black">
+                    </div>
+                    <div class="form-group publicStyle">
+                        <label for="txt_content">制作内容</label>
+                        <input type="text" name="txt_content" class="form-control" id="txt_content" placeholder="制作内容" style="color:black">
+                    </div>
+                    <div class="form-group publicStyle">
+                        <label for="txt_type">类别</label>
+                        <input type="text" name="txt_type" class="form-control" id="txt_type" placeholder="类别" style="color:black">
+                    </div>
+                    <div class="form-group publicStyle">
+                        <label for="txt_price">价格</label>
+                        <input type="text" name="txt_price" class="form-control" id="txt_price" placeholder="价格" style="color:black">
+                    </div>
+                    <div class="form-company publicStyle">
+                        <label for="txt_company">外包公司</label>
+                        <input type="text" name="txt_company" class="form-control" id="txt_company" placeholder="外包公司" style="color:black">
+                    </div>
+                    <div class="form-group publicStyle">
+                        <label for="txt_useDay">制作时间（天）</label>
+                        <input type="text" name="txt_useDay" class="form-control" id="txt_useDay" style="width:200px;" placeholder="制作时间" style="color:black">
+                    </div>
+                </form>
+            </div>
+            <input type="hidden" id="BusinessCode" />
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭</button>
+                <button type="button" id="btn_submit" class="btn btn-primary" data-backdrop="static" onclick="addone()"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<table id="tb_departments"></table>
+<div style="margin-bottom: 1%;margin-top: 1%;"><!-- btn_in -->
+	<span id="OutBtn" class=" btn btn-sm btn-default glyphicon glyphicon-ok" style="display:none">本地测试按钮</span>
+    <span id="StopOutBtn" class="btn btn-sm btn-default " style="display: none;">本地测试按钮</span>
+    <div class="modal-footer" style="display: none;" >
+        <a href="javascript:;" class="btn btn-info FV_submit">提交</a>
+        <input type="hidden" id="staffCode" value="590" />
+        <input type="hidden" id="FormRegistUser" name="FormRegistUser"/>
+    </div>  
+</div>
+<table style="display:none" id="dateTable"></table>
+<script type="text/javascript">
+        document.domain = "oa.gyyx.cn";  //同域
+        function getheight() {
+            $(window.parent.document).contents().find("#Iframe").css("height", ($(".form_validate").height()) + 100 + "px");
+        }
+        $(function () {
+            $(document).addApplication();
+        });
+</script>
+</body>
+<!-- 导入 -->
+<script src="${rc.contextPath}/static/importJS/shim.js"></script>
+<script src="${rc.contextPath}/static/importJS/xlsx.full.min.js"></script>
+<script src="${rc.contextPath}/static/importJS/import_xyl.js"></script>
+<script src="${rc.contextPath}/static/importJS/ga.js"></script>
+</html>

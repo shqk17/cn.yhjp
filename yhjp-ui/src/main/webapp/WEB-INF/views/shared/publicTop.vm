@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script>
+	var rc = "${rc.contextPath}";
+</script>
+<script src="${rc.contextPath}/static/js/jquery-2.0.0.min.js"></script>
+<link href="${rc.contextPath}/static/css/bootstrap.min.css" rel="stylesheet" />
+<link href="${rc.contextPath}/static/css/bootstrap-editable.css" rel="stylesheet" />
+<script src="${rc.contextPath}/static/js/bootstrap.min.js"></script>
+<script src="${rc.contextPath}/static/js/bootstrap-editable.js"></script>
+<script src="${rc.contextPath}/static/js/bootstrap-table.js"></script>
+<link href="${rc.contextPath}/static/css/bootstrap-table.css" rel="stylesheet" />
+<script src="${rc.contextPath}/static/js/bootstrap-table-zh-CN.js"></script>
+<script src="${rc.contextPath}/static/js/bootstrap-table-editable.js"></script>
+<script src="${rc.contextPath}/static/js/bootbox.min.js"></script>
+<link href="${rc.contextPath}/static/outSource/log.css" rel="stylesheet" />
+<script src="${rc.contextPath}/static/js/My97DatePicker/WdatePicker.js"></script>
+</head>
+<style>
+.codeHidden{display:none;}
+</style>                                                    
+<body>

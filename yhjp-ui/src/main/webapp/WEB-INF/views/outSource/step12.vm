@@ -1,0 +1,28 @@
+#parse("shared/publicTop1.vm")
+<style>
+#content{display:block;overflow:auto;}
+</style>
+<script src="${rc.contextPath}/static/outSource/ggwfPublic.js"></script>
+<script src="${rc.contextPath}/static/outSource/outSourceStep12.js"></script>
+<div class="page-header">
+	<h3 id="outSourceName"></h3>
+</div>
+<div class="panel-body" style="padding-bottom: 0px; margin-top: -30px;">
+	<div id="toolbar" class="btn-group">
+		<strong style="margin-left: 10px;">价格总计:</strong><span id="pricesum">数据加载中,请稍侯...</span>
+	</div>
+	<table id="tb_departments"></table>
+	<div id="accessText" style="height:auto; margin-bottom:10%;"></div> 
+</div>
+</section>
+</section>
+</section>
+</section>
+</section>
+
+	<script type="text/javascript" src="http://oa.gyyx.cn/Script/js/jquery.validate.js"></script>
+    <script src="http://oa.gyyx.cn/Script/js/jquery.functions.js"></script>
+    <script src="http://oa.gyyx.cn/Script/js/getUserInfo.js"></script>
+    <script src="http://oa.gyyx.cn/Script/jquery.OASearch.js"></script>
+</body>
+</html>
