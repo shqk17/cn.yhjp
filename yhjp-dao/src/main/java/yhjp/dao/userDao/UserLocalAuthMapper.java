@@ -1,17 +1,21 @@
 package yhjp.dao.userDao;
 
-import yhjp.bean.user.UserLocalAuth;
+import org.apache.ibatis.annotations.Param;
+
+import yhjp.bean.user.UserLocalAuthBean;
 
 public interface UserLocalAuthMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(UserLocalAuth record);
+    int insert(UserLocalAuthBean record);
 
-    int insertSelective(UserLocalAuth record);
+    int insertSelective(UserLocalAuthBean record);
 
-    UserLocalAuth selectByPrimaryKey(Integer id);
+    UserLocalAuthBean selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(UserLocalAuth record);
+    int updateByPrimaryKeySelective(UserLocalAuthBean record);
 
-    int updateByPrimaryKey(UserLocalAuth record);
+    int updateByPrimaryKey(UserLocalAuthBean record);
+
+	UserLocalAuthBean selectByUserName(@Param("userName") String userName);
 }

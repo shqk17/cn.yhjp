@@ -2,7 +2,7 @@ package yhjp.bean.user;
 
 import java.util.Date;
 
-public class UserLocalAuth {
+public class UserLocalAuthBean {
     private Integer id;
 
     private Integer userId;

@@ -1,17 +1,17 @@
 package yhjp.dao.userDao;
 
-import yhjp.bean.user.UserInfo;
+import yhjp.bean.user.UserInfoBean;
 
 public interface UserInfoMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(UserInfo record);
+    int insert(UserInfoBean record);
 
-    int insertSelective(UserInfo record);
+    int insertSelective(UserInfoBean record);
 
-    UserInfo selectByPrimaryKey(Integer id);
+    UserInfoBean selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(UserInfo record);
+    int updateByPrimaryKeySelective(UserInfoBean record);
 
-    int updateByPrimaryKey(UserInfo record);
+    int updateByPrimaryKey(UserInfoBean record);
 }

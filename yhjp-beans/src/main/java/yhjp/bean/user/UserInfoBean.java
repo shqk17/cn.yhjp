@@ -2,7 +2,7 @@ package yhjp.bean.user;
 
 import java.util.Date;
 
-public class UserInfo {
+public class UserInfoBean {
     private Integer id;
 
     private String userName;
