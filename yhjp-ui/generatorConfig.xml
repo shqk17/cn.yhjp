@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<!-- 配置mysql 驱动jar包路径.用了绝对路径 -->
+		<classPathEntry location="E:\GITHUB\mysql-connector-java-5.1.41-bin.jar" />
+	<context id="yhjp_db" targetRuntime="MyBatis3">
+		<!-- 为了防止生成的代码中有很多注释，比较难看，加入下面的配置控制 -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+		<jdbcConnection connectionURL="jdbc:mysql://192.168.49.128:3306/yhjp_db"
+			driverClass="com.mysql.jdbc.Driver" password="mysql123456" userId="mysql" />
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!-- 数据表对应的model 层 -->
+		<javaModelGenerator targetPackage="yhjp.bean.user"
+			targetProject="yhjp-beans">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<!-- sql mapper 隐射配置文件 -->
+		<sqlMapGenerator targetPackage="yhjp.dao.userDao"
+			targetProject="yhjp-dao">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<!-- 在ibatis2 中是dao层，但在mybatis3中，其实就是mapper接口 -->
+		<javaClientGenerator targetPackage="yhjp.dao.userDao"
+			targetProject="yhjp-dao" type="XMLMAPPER">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!-- 要对那些数据表进行生成操作，必须要有一个. -->
+		<table tableName="user_info_tb" domainObjectName="UserInfo"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false">
+		</table>
+		<table tableName="user_local_auth_tb" domainObjectName="UserLocalAuth"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false">
+		</table>
+	</context>
+</generatorConfiguration>

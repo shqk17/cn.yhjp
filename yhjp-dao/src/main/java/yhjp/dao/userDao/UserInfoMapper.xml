@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yhjp.dao.userDao.UserInfoMapper">
+  <resultMap id="BaseResultMap" type="yhjp.bean.user.UserInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="father_name" jdbcType="VARCHAR" property="fatherName" />
+    <result column="generation" jdbcType="VARCHAR" property="generation" />
+    <result column="qq" jdbcType="VARCHAR" property="qq" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="phone_no" jdbcType="VARCHAR" property="phoneNo" />
+    <result column="self_introduction" jdbcType="VARCHAR" property="selfIntroduction" />
+    <result column="ancestral_hall" jdbcType="VARCHAR" property="ancestralHall" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_name, father_name, generation, qq, address, phone_no, self_introduction, 
+    ancestral_hall, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_info_tb
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user_info_tb
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="yhjp.bean.user.UserInfo">
+    insert into user_info_tb (id, user_name, father_name, 
+      generation, qq, address, 
+      phone_no, self_introduction, ancestral_hall, 
+      create_time)
+    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{fatherName,jdbcType=VARCHAR}, 
+      #{generation,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{phoneNo,jdbcType=VARCHAR}, #{selfIntroduction,jdbcType=VARCHAR}, #{ancestralHall,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="yhjp.bean.user.UserInfo">
+    insert into user_info_tb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="fatherName != null">
+        father_name,
+      </if>
+      <if test="generation != null">
+        generation,
+      </if>
+      <if test="qq != null">
+        qq,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="phoneNo != null">
+        phone_no,
+      </if>
+      <if test="selfIntroduction != null">
+        self_introduction,
+      </if>
+      <if test="ancestralHall != null">
+        ancestral_hall,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="fatherName != null">
+        #{fatherName,jdbcType=VARCHAR},
+      </if>
+      <if test="generation != null">
+        #{generation,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNo != null">
+        #{phoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="selfIntroduction != null">
+        #{selfIntroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="ancestralHall != null">
+        #{ancestralHall,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="yhjp.bean.user.UserInfo">
+    update user_info_tb
+    <set>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="fatherName != null">
+        father_name = #{fatherName,jdbcType=VARCHAR},
+      </if>
+      <if test="generation != null">
+        generation = #{generation,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNo != null">
+        phone_no = #{phoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="selfIntroduction != null">
+        self_introduction = #{selfIntroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="ancestralHall != null">
+        ancestral_hall = #{ancestralHall,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="yhjp.bean.user.UserInfo">
+    update user_info_tb
+    set user_name = #{userName,jdbcType=VARCHAR},
+      father_name = #{fatherName,jdbcType=VARCHAR},
+      generation = #{generation,jdbcType=VARCHAR},
+      qq = #{qq,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      phone_no = #{phoneNo,jdbcType=VARCHAR},
+      self_introduction = #{selfIntroduction,jdbcType=VARCHAR},
+      ancestral_hall = #{ancestralHall,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
