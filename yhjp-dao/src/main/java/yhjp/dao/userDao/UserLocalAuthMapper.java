@@ -17,5 +17,5 @@ public interface UserLocalAuthMapper {
 
     int updateByPrimaryKey(UserLocalAuthBean record);
 
-	UserLocalAuthBean selectByUserName(@Param("userName") String userName);
+	UserLocalAuthBean selectByUserName(@Param("userName") String userName,@Param("isActivate") Integer isActivate);
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="yhjp.dao.userDao.UserInfoMapper">
-  <resultMap id="BaseResultMap" type="yhjp.bean.user.UserInfo">
+  <resultMap id="BaseResultMap" type="yhjp.bean.user.UserInfoBean">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="father_name" jdbcType="VARCHAR" property="fatherName" />
@@ -27,7 +27,7 @@
     delete from user_info_tb
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="yhjp.bean.user.UserInfo">
+  <insert id="insert" parameterType="yhjp.bean.user.UserInfoBean">
     insert into user_info_tb (id, user_name, father_name, 
       generation, qq, address, 
       phone_no, self_introduction, ancestral_hall, 
@@ -37,7 +37,7 @@
       #{phoneNo,jdbcType=VARCHAR}, #{selfIntroduction,jdbcType=VARCHAR}, #{ancestralHall,jdbcType=VARCHAR}, 
       #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="yhjp.bean.user.UserInfo">
+  <insert id="insertSelective" parameterType="yhjp.bean.user.UserInfoBean">
     insert into user_info_tb
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -104,7 +104,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="yhjp.bean.user.UserInfo">
+  <update id="updateByPrimaryKeySelective" parameterType="yhjp.bean.user.UserInfoBean">
     update user_info_tb
     <set>
       <if test="userName != null">
@@ -137,7 +137,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="yhjp.bean.user.UserInfo">
+  <update id="updateByPrimaryKey" parameterType="yhjp.bean.user.UserInfoBean">
     update user_info_tb
     set user_name = #{userName,jdbcType=VARCHAR},
       father_name = #{fatherName,jdbcType=VARCHAR},

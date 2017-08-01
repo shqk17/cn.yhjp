@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+<div class="user_login">
+        	<p style="font-size:18px;font-weight:bold;color:#7b2e26">为了保证刘氏家族信息安全，本注册内容必须如实填写，否则将不能通过管理员审查，非本族刘氏宗亲不能注册。</p>
+            <div class="blank10"></div>
+        	<div class="liuyan">
+            <div class="blank10"></div>
+            <form action="" method="post">
+            		<table width="575" border="0" cellspacing="0" cellpadding="0">
+                      <tbody><tr>
+                        <td width="136" height="32" align="right">姓名：&nbsp;</td>
+                        <td width="439" height="32"><input name="username" type="text" class="pt" id="username"><span class="red">*必填</span></td>
+                      </tr>
+                      <tr>
+                        <td height="32" align="right">密码：&nbsp;</td>
+                        <td height="32"><input name="password" type="password" class="pt" id="password"><span class="red">*必填</span></td>
+                      </tr>
+                      <tr>
+                        <td height="32" align="right">父亲名讳：&nbsp;</td>
+                        <td height="32"><input name="name" type="text" class="pt" id="name"><span class="red">*必填</span></td>
+                      </tr>
+					   <tr>
+                        <td height="32" align="right">世代：&nbsp;</td>
+                        <td height="32"><input name="fax" type="text" class="pt" id="fax">
+                        <span class="red">*必填例如：二十二世</span></td>
+                      </tr>
+                      <tr>
+                      </tr><tr>
+                        <td height="32" align="right">QQ：&nbsp;</td>
+                        <td height="32"><input name="email" type="text" class="pt" id="email"></td>
+                      </tr>
+                      <tr>
+                        <td height="32" align="right">地址：&nbsp;</td>
+                        <td height="32"><input name="address" type="text" class="pt" id="address"><span class="red">*必填</span></td>
+                      </tr>
+                      <tr>
+                        <td height="32" align="right">电话：&nbsp;</td>
+                        <td height="32"><input name="tel" type="text" class="pt" id="tel"><span class="red">*必填</span></td>
+                      </tr>
+
+                        <tr><td height="122" align="right" valign="top">自我介绍：&nbsp;</td>
+                        <td><textarea name="jieshao" cols="45" rows="8" class="pt" id="jieshao"></textarea></td>
+                      </tr>
+                      <tr>
+                        <td height="40" align="right" valign="top">&nbsp;</td>
+                        <td height="40"><input name="button" type="submit" class="pt" id="button" style="width:40px;height:20px;font-size:12px" value="提交">
+                        <input name="button2" type="reset" class="pt" id="button2" style="width:40px;height:20px;font-size:12px" value="重写"></td>
+                      </tr>
+                    </tbody></table>
+          </form>          
+          </div>
+        </div>
+
+	</body>
+</html>

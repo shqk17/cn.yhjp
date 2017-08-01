@@ -10,7 +10,9 @@ public class UserLocalAuthBean {
     private String userName;
 
     private String passWord;
-
+    
+    private Integer isActivate;
+    
     private Date createTime;
 
     public Integer getId() {
@@ -52,4 +54,13 @@ public class UserLocalAuthBean {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+
+	public Integer getIsActivate() {
+		return isActivate;
+	}
+
+	public void setIsActivate(Integer isActivate) {
+		this.isActivate = isActivate;
+	}
+    
 }

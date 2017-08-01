@@ -9,8 +9,8 @@ import yhjp.bll.userBll.UserBll;
 public class UserService {
 	@Autowired
 	private UserBll userBll;
-	public UserLocalAuthBean findUserInLocal(String userName) {
-		return userBll.selectByUserName(userName);
+	public UserLocalAuthBean findUserInLocal(String userName, Integer isActivate) {
+		return userBll.selectByUserName(userName,isActivate);
 	}
 
 	public UserInfoBean findUserInfo(Integer userId) {

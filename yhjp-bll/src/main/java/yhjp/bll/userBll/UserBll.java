@@ -12,11 +12,17 @@ public class UserBll {
 	private UserLocalAuthMapper userLocalAuthMapper;
 	@Autowired
 	private UserInfoMapper userInfoMapper;
-	public UserLocalAuthBean selectByUserName(String userName) {
-		return userLocalAuthMapper.selectByUserName(userName);
+	public UserLocalAuthBean selectByUserName(String userName, Integer isActivate) {
+		return userLocalAuthMapper.selectByUserName(userName,isActivate);
 	}
 	public UserInfoBean selectById(Integer userId) {
 		return userInfoMapper.selectByPrimaryKey(userId);
+	}
+	public void insertUserLocalAuth(UserLocalAuthBean userLocalAuthBean) {
+		userLocalAuthMapper.insertSelective(userLocalAuthBean);
+	}
+	public void insertUserInfo(UserInfoBean userInfoBean) {
+		userInfoMapper.insertSelective(userInfoBean);
 	}
 
 }
