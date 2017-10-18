@@ -43,5 +43,5 @@
 	
 	<annotation-driven />
 	<!-- 定义扫描路径 -->
-	<context:component-scan base-package="cn.yhjp.ui" />
+	<context:component-scan base-package="yhjp.ui" />
 </beans:beans>

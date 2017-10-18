@@ -2,14 +2,14 @@ package yhjp.bean.common;
 
 
 public class ResultBean <T>{
-	private Boolean sucess;
+	private Boolean success;
 	private String message;
 	private T data;
-	public Boolean getSucess() {
-		return sucess;
+	public Boolean getSuccess() {
+		return success;
 	}
-	public void setSucess(Boolean sucess) {
-		this.sucess = sucess;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 	public String getMessage() {
 		return message;
@@ -25,11 +25,11 @@ public class ResultBean <T>{
 	}
 	@Override
 	public String toString() {
-		return "ResultBean [sucess=" + sucess + ", message=" + message + ", data=" + data + "]";
+		return "ResultBean [success=" + success + ", message=" + message + ", data=" + data + "]";
 	}
-	public ResultBean(Boolean sucess, String message, T data) {
+	public ResultBean(Boolean success, String message, T data) {
 		super();
-		this.sucess = sucess;
+		this.success = success;
 		this.message = message;
 		this.data = data;
 	}

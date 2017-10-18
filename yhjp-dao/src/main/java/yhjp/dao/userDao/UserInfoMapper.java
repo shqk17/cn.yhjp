@@ -14,4 +14,6 @@ public interface UserInfoMapper {
     int updateByPrimaryKeySelective(UserInfoBean record);
 
     int updateByPrimaryKey(UserInfoBean record);
+
+	UserInfoBean findUserInfoByPhone(String phoneNo);
 }

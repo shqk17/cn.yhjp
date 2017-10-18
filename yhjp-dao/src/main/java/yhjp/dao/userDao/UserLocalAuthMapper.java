@@ -1,5 +1,7 @@
 package yhjp.dao.userDao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 import yhjp.bean.user.UserLocalAuthBean;
@@ -17,5 +19,5 @@ public interface UserLocalAuthMapper {
 
     int updateByPrimaryKey(UserLocalAuthBean record);
 
-	UserLocalAuthBean selectByUserName(@Param("userName") String userName,@Param("isActivate") Integer isActivate);
+    List<UserLocalAuthBean> selectByUserName(@Param("userName") String userName,@Param("isActivate") Integer isActivate);
 }

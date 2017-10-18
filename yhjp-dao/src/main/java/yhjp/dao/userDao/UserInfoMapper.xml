@@ -37,7 +37,7 @@
       #{phoneNo,jdbcType=VARCHAR}, #{selfIntroduction,jdbcType=VARCHAR}, #{ancestralHall,jdbcType=VARCHAR}, 
       #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="yhjp.bean.user.UserInfoBean">
+  <insert id="insertSelective" parameterType="yhjp.bean.user.UserInfoBean" useGeneratedKeys="true" keyProperty="id">
     insert into user_info_tb
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -150,4 +150,10 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="findUserInfoByPhone" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_info_tb
+    where phone_no = #{phoneNo,jdbcType=VARCHAR};
+  </select>
 </mapper>

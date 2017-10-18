@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -19,6 +21,8 @@ import yhjp.service.user.UserLoginService;
 @Controller
 @RequestMapping("/user")
 public class UserLogin {
+	private static final Logger logger = LoggerFactory
+            .getLogger(UserLogin.class);
 	@Autowired
 	private UserLoginService userLoginService;
 	@RequestMapping("/signup/page")
@@ -52,7 +56,7 @@ public class UserLogin {
 	public ResultBean<String> signup(HttpServletRequest request, @Validated UserInfoBean userInfoBean,
 			@RequestParam("passWord") String passWord, BindingResult BR) {
 		ResultBean<String> result = new ResultBean<String>(false, "未知错误", null);
-		if (StringUtils.isNotEmpty(passWord)) {
+		if (!StringUtils.isNotEmpty(passWord)) {
 			result.setMessage("密码不能为空");
 			return result;
 		}

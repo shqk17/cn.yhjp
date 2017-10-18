@@ -2,39 +2,47 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
-		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<!--<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>-->
+		<script src="/static/js/jquery-2.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/static/js/user/login.js" type="text/javascript" charset="utf-8"></script>
 		<title></title>
 	</head>
 	<body>
-<div class="user_login">
+<div class="user_signin">
         	<p style="font-size:18px;font-weight:bold;color:#7b2e26">为了保证刘氏家族信息安全，本注册内容必须如实填写，否则将不能通过管理员审查，非本族刘氏宗亲不能注册。</p>
             <div class="blank10"></div>
         	<div class="liuyan">
             <div class="blank10"></div>
-            <form action="" method="post">
             		<table width="575" border="0" cellspacing="0" cellpadding="0">
                       <tbody><tr>
                         <td width="136" height="32" align="right">姓名：&nbsp;</td>
-                        <td width="439" height="32"><input name="username" type="text" class="pt" id="username"><span class="red">*必填</span></td>
+                        <td width="439" height="32"><input name="userName" type="text" class="pt" id="userName"><span class="red">*必填</span></td>
                       </tr>
                       <tr>
                         <td height="32" align="right">密码：&nbsp;</td>
-                        <td height="32"><input name="password" type="password" class="pt" id="password"><span class="red">*必填</span></td>
+                        <td height="32"><input name="passWord" type="password" class="pt" id="passWord"><span class="red">*必填</span></td>
+                      </tr>
+                      <tr>
+                        <td height="32" align="right">确认密码：&nbsp;</td>
+                        <td height="32"><input name="passWord2" type="password" class="pt" id="passWord2"><span class="red">*必填</span></td>
+                      </tr>
+                      <tr>
+                        <td height="32" align="right">所属祠堂：&nbsp;</td>
+                        <td height="32"><input name="ancestralHall" type="text" class="pt" id="ancestralHall"><span class="red">*必填</span></td>
                       </tr>
                       <tr>
                         <td height="32" align="right">父亲名讳：&nbsp;</td>
-                        <td height="32"><input name="name" type="text" class="pt" id="name"><span class="red">*必填</span></td>
+                        <td height="32"><input name="fatherName" type="text" class="pt" id="fatherName"><span class="red">*必填</span></td>
                       </tr>
 					   <tr>
                         <td height="32" align="right">世代：&nbsp;</td>
-                        <td height="32"><input name="fax" type="text" class="pt" id="fax">
+                        <td height="32"><input name="generation" type="text" class="pt" id="generation">
                         <span class="red">*必填例如：二十二世</span></td>
                       </tr>
                       <tr>
                       </tr><tr>
                         <td height="32" align="right">QQ：&nbsp;</td>
-                        <td height="32"><input name="email" type="text" class="pt" id="email"></td>
+                        <td height="32"><input name="QQ" type="text" class="pt" id="qq"></td>
                       </tr>
                       <tr>
                         <td height="32" align="right">地址：&nbsp;</td>
@@ -46,15 +54,14 @@
                       </tr>
 
                         <tr><td height="122" align="right" valign="top">自我介绍：&nbsp;</td>
-                        <td><textarea name="jieshao" cols="45" rows="8" class="pt" id="jieshao"></textarea></td>
+                        <td><textarea name="selfIntroduction" cols="45" rows="8" class="pt" id="selfIntroduction"></textarea></td>
                       </tr>
                       <tr>
                         <td height="40" align="right" valign="top">&nbsp;</td>
-                        <td height="40"><input name="button" type="submit" class="pt" id="button" style="width:40px;height:20px;font-size:12px" value="提交">
+                        <td height="40"><input name="signup_bt" type="submit" class="pt" id="signup_bt" style="width:40px;height:20px;font-size:12px" value="提交">
                         <input name="button2" type="reset" class="pt" id="button2" style="width:40px;height:20px;font-size:12px" value="重写"></td>
                       </tr>
-                    </tbody></table>
-          </form>          
+                    </tbody></table>  
           </div>
         </div>
 

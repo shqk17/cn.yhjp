@@ -4,8 +4,10 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import sun.misc.BASE64Encoder;
+import org.springframework.stereotype.Service;
 
+import sun.misc.BASE64Encoder;
+@Service
 public class MD5 {
 	/**利用MD5进行加密
      * @param str  待加密的字符串
